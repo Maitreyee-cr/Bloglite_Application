@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogLite</title>
+    <link rel="icon" type="image/x-icon" href="/static/assets/logo.png">
+    <link href="static/css/custom.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7f4d04ff57.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .gradient {
+            background: linear-gradient(to right, #FF9A8B, #FF6B6B);
+            padding: 15px;
+            color: #fff;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .navbar-nav {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .nav-item {
+            margin-right: 20px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .nav-link:hover {
+            color: #FFD166;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        .display {
+            font-size: 2.5em;
+            color: #2E4057;
+        }
+
+        .text-dark {
+            color: #2E4057;
+        }
+
+        .text-danger {
+            color: #007BFF; /* Updated to blue */
+        }
+
+        .small {
+            font-size: 14px;
+        }
+
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .btn-primary {
+            background-color: #FF9A8B;
+            border: none;
+            padding: 10px 20px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .btn-primary:hover {
+            background-color: #FF6B6B;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gradient container-fluid d-flex justify-content-end py-3">
+        <ul class="navbar-nav d-flex flex-row">
+            <li class="nav-item me-3">
+                <a href="/login" class="nav-link text-success">
+                    Login
+                </a>
+            </li>
+            <li class="nav-item me-3">
+                <a href="/register" class="nav-link text-success">
+                    Register
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="container pt-3">
+        <div class="row my-5">
+            <div class="col-md p-md-1">
+                <img src="static/assets/blogimage.jpg"/>
+            <div class="col-md pe-md-5 pt-4">
+                <div class="container-fluid pe-md-5">
+                    <h1 class="display">Discover the New </h1>
+                    <h1 class="display text-dark">Blog<span class="text-danger">Vibes</span></h1>
+                    <p class="text-dark small pe-md-5">
+                        Dive into the world of creativity and expression! 
+                        Join BlogLite today and share your unique perspective with the community.
+                    </p>
+                    <a href="/register" class="btn btn-primary text-light">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+

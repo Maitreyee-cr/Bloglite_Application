@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{blog.Title}}</title>
+    <link rel="icon" type="image/x-icon" href="/static/assets/logo.png">
+    <link href="/static/css/custom.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7f4d04ff57.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+
+        .container {
+            margin-top: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .link-dark {
+            color: #343a40;
+        }
+
+        .link-dark:hover {
+            text-decoration: none;
+        }
+
+        .btn-outline-dark {
+            color: #343a40;
+            border-color: #343a40;
+        }
+
+        .btn-outline-dark:hover {
+            background-color: #343a40;
+            color: #ffffff;
+        }
+
+        .btn-primary.text-dark {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary.text-dark:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container my-4">
+        <div class="row">
+            <div class="col d-flex flex-row">
+                <p onclick="history.back()" class="link-dark fw-bold" style="cursor: pointer;">
+                    <i class="fas fa-chevron-left"></i>
+                </p>
+                <a href='/home' class="link-dark fw-bold ms-3" style="cursor: pointer;">
+                    <i class="fas fa-home"></i>
+                </a>
+                <a href="/user/{{blog.user.id}}" class="text-dark fw-bold ms-3" style="text-decoration: none;">
+                    {{blog.user.Username}}
+                </a>
+            </div>
+            {% if blog.user_id == current_user.id %}
+            <div class="col justify-content-end d-flex">
+                <a data-bs-toggle="modal" data-bs-target="#deleteModal" class="link-dark" style="cursor: pointer;">
+                    <i class="fas fa-trash-alt"></i>
+                </a>
+            </div>
+            {% endif %}
+        </div>
+        <!-- ... rest of your HTML ... -->
+    </div>
+    <!-- ... rest of your HTML ... -->
+</body>
+
+</html>
