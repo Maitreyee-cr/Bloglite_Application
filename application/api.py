@@ -74,8 +74,8 @@ class UserAPI(Resource):
         if Password != None:
             if len(Password)<8:
                 raise BusinessValidationError(statuscode=400,error="USER06",error_message="Password is too short")
-            h_pword = bcrypt.generate_password_hash(Password)
-            user.Password = h_pword
+            hashed_password = bcrypt.generate_password_hash(Password)
+            user.Password = hashed_password
         
         if About != None:
             user.About = About
@@ -133,8 +133,8 @@ class UserAPI(Resource):
         if Password != None:
             if len(Password)<8:
                 raise BusinessValidationError(statuscode=400,error="USER06",error_message="Password is too short")
-            h_pword = bcrypt.generate_password_hash(Password)
-            user.Password = h_pword
+            hashed_password = bcrypt.generate_password_hash(Password)
+            user.Password = hashed_password
         else:
             raise BusinessValidationError(statuscode=400,error="USER07",error_message="Password is required")
         
@@ -181,9 +181,9 @@ class BlogAPI(Resource):
         if(args['Image']):
             # deleting the old image
             path = os.getcwd()
-            image_path = path+"/static/images/"+blog.ImageURL
-            if(os.path.exists(image_path)):
-                os.remove(image_path)
+            img_path = path+"/static/images/"+blog.ImageURL
+            if(os.path.exists(img_path)):
+                os.remove(img_path)
                 print("Old image deleted")
             else:
                 print("Old image not found")
@@ -204,9 +204,9 @@ class BlogAPI(Resource):
             raise RaiseError(404)
         # deleting the old image
         path = os.getcwd()
-        image_path = path+"/static/images/"+blog.ImageURL
-        if(os.path.exists(image_path)):
-            os.remove(image_path)
+        img_path = path+"/static/images/"+blog.ImageURL
+        if(os.path.exists(img_path)):
+            os.remove(img_path)
             print("Image deleted")
         else:
             print("Image not found")
@@ -268,8 +268,8 @@ class BlogAPI(Resource):
 class ImageAPI(Resource):
     def get(self,ImageURL):
         path = os.getcwd()
-        image_path = path+"/static/images/"+ImageURL
+        img_path = path+"/static/images/"+ImageURL
         try:
-            return send_file(image_path)
+            return send_file(img_path)
         except:
             raise RaiseError(404)
